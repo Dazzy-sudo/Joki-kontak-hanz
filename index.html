@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEBAR.ID — Jasa Save Kontak WhatsApp</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root{
+  --bg:#080909;
+  --card:#111313;
+  --card2:#161818;
+  --white:#f4f5f2;
+  --muted:#858b88;
+  --line:rgba(255,255,255,.08);
+  --green:#25d366;
+  --green2:#1db954;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:"DM Sans",sans-serif;
+}
+
+/* NAV */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  background:rgba(8,9,9,.86);
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  max-width:1100px;
+  height:70px;
+  margin:auto;
+  padding:0 20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:21px;
+  font-weight:700;
+  letter-spacing:-1px;
+}
+
+.logo span{
+  color:var(--green);
+}
+
+.status{
+  display:flex;
+  align-items:center;
+  gap:7px;
+
+  color:#777d79;
+  font-size:10px;
+}
+
+.status i{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 12px var(--green);
+}
+
+/* HERO */
+
+.hero{
+  max-width:1100px;
+  margin:auto;
+
+  padding:85px 20px 75px;
+
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:70px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-block;
+
+  padding:8px 12px;
+
+  border:1px solid rgba(37,211,102,.2);
+  border-radius:50px;
+
+  color:var(--green);
+
+  background:rgba(37,211,102,.05);
+
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1.5px;
+}
+
+.hero h1{
+  font-family:"Space Grotesk",sans-serif;
+
+  max-width:650px;
+
+  margin-top:20px;
+
+  font-size:clamp(48px,7vw,78px);
+  line-height:.94;
+
+  letter-spacing:-4px;
+}
+
+.hero h1 span{
+  color:var(--green);
+}
+
+.hero p{
+  max-width:550px;
+
+  margin-top:22px;
+
+  color:var(--muted);
+
+  font-size:13px;
+  line-height:1.8;
+}
+
+.hero-button{
+  display:inline-block;
+
+  margin-top:28px;
+
+  padding:14px 20px;
+
+  border-radius:9px;
+
+  background:var(--green);
+  color:#061009;
+
+  text-decoration:none;
+
+  font-size:12px;
+  font-weight:800;
+}
+
+/* HERO CARD */
+
+.hero-card{
+  min-height:340px;
+
+  padding:25px;
+
+  border:1px solid var(--line);
+  border-radius:22px;
+
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(37,211,102,.15),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      #171b19,
+      #0c0e0d
+    );
+
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-card:before{
+  content:"";
+
+  position:absolute;
+
+  width:210px;
+  height:210px;
+
+  border:1px solid rgba(37,211,102,.12);
+  border-radius:50%;
+
+  right:-65px;
+  bottom:-65px;
+}
+
+.hero-card-top{
+  display:flex;
+  justify-content:space-between;
+
+  color:#737976;
+
+  font-size:8px;
+  letter-spacing:1.5px;
+}
+
+.whatsapp-symbol{
+  margin-top:60px;
+
+  width:65px;
+  height:65px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  background:var(--green);
+  color:#071009;
+
+  font-size:29px;
+  font-weight:800;
+}
+
+.hero-card h2{
+  margin-top:20px;
+
+  font-family:"Space Grotesk",sans-serif;
+
+  font-size:30px;
+  letter-spacing:-1.5px;
+}
+
+.hero-card-bottom{
+  position:absolute;
+  bottom:24px;
+
+  color:#676d69;
+
+  font-size:8px;
+  letter-spacing:1px;
+}
+
+/* PACKAGES */
+
+.packages{
+  max-width:1100px;
+  margin:auto;
+
+  padding:20px 20px 90px;
+}
+
+.section-label{
+  color:var(--green);
+
+  font-size:9px;
+  font-weight:800;
+
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.section-title{
+  margin-top:7px;
+
+  font-family:"Space Grotesk",sans-serif;
+
+  font-size:31px;
+  letter-spacing:-1.5px;
+}
+
+.section-desc{
+  margin-top:6px;
+
+  color:#747a76;
+
+  font-size:11px;
+}
+
+.package-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+
+  gap:10px;
+
+  margin-top:25px;
+}
+
+.package{
+  min-height:190px;
+
+  padding:20px;
+
+  border:1px solid var(--line);
+  border-radius:15px;
+
+  background:var(--card);
+
+  cursor:pointer;
+
+  transition:.2s;
+}
+
+.package:hover{
+  transform:translateY(-4px);
+
+  border-color:rgba(37,211,102,.35);
+}
+
+.package.active{
+  border-color:var(--green);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(37,211,102,.09),
+      var(--card)
+    );
+}
+
+.package-duration{
+  color:#777d79;
+
+  font-size:9px;
+  font-weight:800;
+
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.package h3{
+  margin-top:32px;
+
+  font-family:"Space Grotesk",sans-serif;
+
+  font-size:22px;
+}
+
+.package-price{
+  margin-top:8px;
+
+  color:var(--green);
+
+  font-size:14px;
+  font-weight:800;
+}
+
+.package-desc{
+  margin-top:8px;
+
+  color:#707672;
+
+  font-size:9px;
+  line-height:1.6;
+}
+
+/* ORDER */
+
+.order-section{
+  padding:90px 20px;
+
+  background:#0d0f0e;
+
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.order{
+  max-width:950px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr 350px;
+
+  gap:45px;
+}
+
+.order-title h2{
+  margin-top:8px;
+
+  font-family:"Space Grotesk",sans-serif;
+
+  font-size:43px;
+  line-height:1;
+
+  letter-spacing:-2px;
+}
+
+.order-title h2 span{
+  color:var(--green);
+}
+
+.order-title p{
+  max-width:450px;
+
+  margin-top:14px;
+
+  color:#747a76;
+
+  font-size:11px;
+  line-height:1.8;
+}
+
+/* FORM */
+
+.form{
+  margin-top:30px;
+}
+
+.field{
+  margin-bottom:15px;
+}
+
+.field label{
+  display:block;
+
+  margin-bottom:7px;
+
+  color:#777d79;
+
+  font-size:9px;
+  font-weight:800;
+}
+
+.field input,
+.field textarea{
+  width:100%;
+
+  padding:13px;
+
+  border:1px solid var(--line);
+  border-radius:8px;
+
+  outline:none;
+
+  background:#080a09;
+  color:white;
+
+  font-family:inherit;
+  font-size:11px;
+}
+
+.field textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.field input:focus,
+.field textarea:focus{
+  border-color:rgba(37,211,102,.55);
+}
+
+/* SUMMARY */
+
+.summary{
+  position:sticky;
+  top:90px;
+
+  padding:22px;
+
+  border:1px solid var(--line);
+  border-radius:17px;
+
+  background:var(--card2);
+}
+
+.summary-label{
+  color:#656b67;
+
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+}
+
+.summary h3{
+  margin-top:9px;
+
+  font-family:"Space Grotesk",sans-serif;
+
+  font-size:21px;
+}
+
+.summary-desc{
+  margin-top:5px;
+
+  color:#737975;
+
+  font-size:10px;
+  line-height:1.6;
+}
+
+.line{
+  margin:20px 0;
+
+  border-top:1px solid var(--line);
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+
+  margin-bottom:12px;
+
+  color:#737975;
+
+  font-size:10px;
+}
+
+.row strong{
+  color:white;
+}
+
+.total{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding-top:15px;
+
+  border-top:1px solid var(--line);
+}
+
+.total span{
+  color:#737975;
+  font-size:9px;
+}
+
+.total strong{
+  color:var(--green);
+  font-size:18px;
+}
+
+.order-button{
+  width:100%;
+
+  margin-top:20px;
+
+  padding:14px;
+
+  border:0;
+  border-radius:8px;
+
+  background:var(--green);
+
+  color:#061009;
+
+  font-family:inherit;
+  font-size:11px;
+  font-weight:800;
+
+  cursor:pointer;
+}
+
+.order-button:hover{
+  background:#36e577;
+}
+
+/* HOW */
+
+.how{
+  max-width:1100px;
+  margin:auto;
+
+  padding:80px 20px;
+}
+
+.how-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:12px;
+
+  margin-top:25px;
+}
+
+.how-card{
+  padding:22px;
+
+  border:1px solid var(--line);
+  border-radius:15px;
+
+  background:var(--card);
+}
+
+.number{
+  color:var(--green);
+
+  font-size:10px;
+  font-weight:800;
+}
+
+.how-card h3{
+  margin-top:30px;
+
+  font-size:14px;
+}
+
+.how-card p{
+  margin-top:6px;
+
+  color:#707672;
+
+  font-size:10px;
+  line-height:1.7;
+}
+
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+
+  z-index:999;
+
+  display:none;
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+
+  background:rgba(0,0,0,.75);
+
+  backdrop-filter:blur(10px);
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:100%;
+  max-width:410px;
+
+  padding:27px;
+
+  border:1px solid var(--line);
+  border-radius:17px;
+
+  background:#151817;
+}
+
+.modal-box h3{
+  font-family:"Space Grotesk",sans-serif;
+
+  font-size:21px;
+}
+
+.modal-box p{
+  margin-top:7px;
+
+  color:#777d79;
+
+  font-size:10px;
+  line-height:1.7;
+}
+
+.order-preview{
+  margin-top:18px;
+
+  padding:15px;
+
+  border:1px solid var(--line);
+  border-radius:9px;
+
+  background:#090b0a;
+}
+
+.preview-row{
+  display:flex;
+  justify-content:space-between;
+
+  margin-bottom:8px;
+
+  font-size:9px;
+}
+
+.preview-row span{
+  color:#686e6a;
+}
+
+.preview-row strong{
+  color:white;
+}
+
+.preview-total{
+  display:flex;
+  justify-content:space-between;
+
+  padding-top:12px;
+
+  border-top:1px solid var(--line);
+
+  font-size:11px;
+}
+
+.preview-total strong{
+  color:var(--green);
+}
+
+.wa-button{
+  display:block;
+
+  margin-top:15px;
+
+  padding:14px;
+
+  border-radius:8px;
+
+  background:var(--green);
+
+  color:#061009;
+
+  text-align:center;
+  text-decoration:none;
+
+  font-size:11px;
+  font-weight:800;
+}
+
+.close{
+  width:100%;
+
+  margin-top:8px;
+
+  padding:12px;
+
+  border:1px solid var(--line);
+  border-radius:8px;
+
+  background:transparent;
+
+  color:white;
+
+  cursor:pointer;
+
+  font-size:10px;
+}
+
+/* FOOTER */
+
+footer{
+  padding:40px 20px;
+
+  border-top:1px solid var(--line);
+
+  color:#555b57;
+
+  text-align:center;
+
+  font-size:9px;
+}
+
+footer strong{
+  color:#dce0dc;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .package-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .order{
+    grid-template-columns:1fr;
+  }
+
+  .summary{
+    position:static;
+  }
+
+  .how-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:520px){
+
+  .hero{
+    padding-top:55px;
+  }
+
+  .hero h1{
+    letter-spacing:-3px;
+  }
+
+  .package-grid{
+    grid-template-columns:1fr;
+  }
+
+  .order-title h2{
+    font-size:35px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- NAV -->
+
+<header>
+
+  <div class="nav">
+
+    <div class="logo">
+      NEBAR<span>.ID</span>
+    </div>
+
+    <div class="status">
+      <i></i>
+      ORDER ONLINE
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div>
+
+    <div class="badge">
+      WHATSAPP CONTACT SERVICE
+    </div>
+
+    <h1>
+      Biar kontakmu
+      <span>lebih dikenal.</span>
+    </h1>
+
+    <p>
+      Jasa nebar kontak WhatsApp untuk kebutuhan promosi.
+      Pilih durasi, masukkan nomor WhatsApp yang ingin
+      dipromosikan, lalu kirim order ke admin.
+    </p>
+
+    <a href="#paket" class="hero-button">
+      Lihat Paket →
+    </a>
+
+  </div>
+
+
+  <div class="hero-card">
+
+    <div class="hero-card-top">
+      <span>NEBAR.ID</span>
+      <span>CONTACT SERVICE</span>
+    </div>
+
+    <div class="whatsapp-symbol">
+      WA
+    </div>
+
+    <h2>
+      Your number.<br>
+      <span style="color:var(--green)">
+        More reach.
+      </span>
+    </h2>
+
+    <div class="hero-card-bottom">
+      MANUAL PROMOTION · SIMPLE ORDER
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PACKAGES -->
+
+<section class="packages" id="paket">
+
+  <div class="section-label">
+    Pricing
+  </div>
+
+  <div class="section-title">
+    Pilih durasi nebar.
+  </div>
+
+  <div class="section-desc">
+    Harga transparan tanpa biaya tersembunyi.
+  </div>
+
+
+  <div class="package-grid" id="packageGrid">
+  </div>
+
+</section>
+
+
+<!-- ORDER -->
+
+<section class="order-section" id="order">
+
+  <div class="order">
+
+    <div>
+
+      <div class="order-title">
+
+        <div class="section-label">
+          Order service
+        </div>
+
+        <h2>
+          Masukkan<br>
+          <span>nomor WhatsApp.</span>
+        </h2>
+
+        <p>
+          Isi nomor WhatsApp yang ingin kamu promosikan,
+          lalu kirim detail order kepada admin melalui WhatsApp.
+        </p>
+
+      </div>
+
+
+      <div class="form">
+
+        <div class="field">
+
+          <label>
+            NAMA PEMESAN
+          </label>
+
+          <input
+            id="name"
+            type="text"
+            placeholder="Nama kamu"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            NOMOR WHATSAPP YANG DIPROMOSIKAN
+          </label>
+
+          <input
+            id="targetNumber"
+            type="text"
+            placeholder="Contoh: 089xxxxxxxxx"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            NAMA KONTAK / LABEL
+          </label>
+
+          <input
+            id="contactName"
+            type="text"
+            placeholder="Contoh: Admin Toko Saya"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            CATATAN
+          </label>
+
+          <textarea
+            id="note"
+            placeholder="Tambahkan catatan jika ada..."
+          ></textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <aside class="summary">
+
+      <div class="summary-label">
+        Selected package
+      </div>
+
+      <h3 id="summaryName">
+        1 Hari
+      </h3>
+
+      <div class="summary-desc">
+        Paket nebar kontak selama 1 hari.
+      </div>
+
+      <div class="line"></div>
+
+
+      <div class="row">
+
+        <span>Durasi</span>
+
+        <strong id="summaryDuration">
+          1 Hari
+        </strong>
+
+      </div>
+
+
+      <div class="row">
+
+        <span>Harga</span>
+
+        <strong id="summaryPrice">
+          Rp3.000
+        </strong>
+
+      </div>
+
+
+      <div class="total">
+
+        <span>Total</span>
+
+        <strong id="summaryTotal">
+          Rp3.000
+        </strong>
+
+      </div>
+
+
+      <button
+        class="order-button"
+        onclick="createOrder()"
+      >
+        Lanjut ke WhatsApp →
+      </button>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+<!-- HOW -->
+
+<section class="how">
+
+  <div class="section-label">
+    How it works
+  </div>
+
+  <div class="section-title">
+    Cara order.
+  </div>
+
+
+  <div class="how-grid">
+
+    <div class="how-card">
+
+      <div class="number">
+        01
+      </div>
+
+      <h3>
+        Pilih paket
+      </h3>
+
+      <p>
+        Tentukan durasi nebar yang kamu inginkan.
+      </p>
+
+    </div>
+
+
+    <div class="how-card">
+
+      <div class="number">
+        02
+      </div>
+
+      <h3>
+        Masukkan nomor
+      </h3>
+
+      <p>
+        Masukkan nomor WhatsApp yang ingin dipromosikan.
+      </p>
+
+    </div>
+
+
+    <div class="how-card">
+
+      <div class="number">
+        03
+      </div>
+
+      <h3>
+        Hubungi admin
+      </h3>
+
+      <p>
+        Detail order otomatis dikirim ke WhatsApp admin
+        untuk konfirmasi dan pembayaran.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+  <div class="modal-box">
+
+    <h3>
+      Order sudah siap.
+    </h3>
+
+    <p>
+      Periksa kembali detail pesananmu sebelum
+      mengirimkannya ke admin.
+    </p>
+
+
+    <div class="order-preview">
+
+      <div class="preview-row">
+        <span>Nama</span>
+        <strong id="previewName">-</strong>
+      </div>
+
+      <div class="preview-row">
+        <span>Nomor</span>
+        <strong id="previewNumber">-</strong>
+      </div>
+
+      <div class="preview-row">
+        <span>Paket</span>
+        <strong id="previewPackage">-</strong>
+      </div>
+
+      <div class="preview-row">
+        <span>Harga</span>
+        <strong id="previewPrice">-</strong>
+      </div>
+
+      <div class="preview-total">
+        <span>Total</span>
+        <strong id="previewTotal">-</strong>
+      </div>
+
+    </div>
+
+
+    <a
+      id="waButton"
+      class="wa-button"
+      href="#"
+      target="_blank"
+    >
+      Kirim Order ke WhatsApp
+    </a>
+
+
+    <button
+      class="close"
+      onclick="closeModal()"
+    >
+      Kembali
+    </button>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  <strong>NEBAR.ID</strong>
+
+  <br><br>
+
+  Jasa promosi kontak WhatsApp.
+
+  <br><br>
+
+  © 2026 NEBAR.ID
+
+</footer>
+
+
+<script>
+
+/*
+==================================================
+  PAKET HARGA
+==================================================
+
+  Kalau mau mengubah harga,
+  cukup edit bagian ini.
+
+*/
+
+const packages = [
+
+  {
+    name:"1 Hari",
+    duration:"1 Hari",
+    price:3000
+  },
+
+  {
+    name:"2 Hari",
+    duration:"2 Hari",
+    price:6000
+  },
+
+  {
+    name:"3 Hari",
+    duration:"3 Hari",
+    price:9000
+  },
+
+  {
+    name:"4 Hari",
+    duration:"4 Hari",
+    price:12000
+  },
+
+  {
+    name:"Permanen",
+    duration:"Permanen",
+    price:15000
+  }
+
+];
+
+
+let selectedPackage = packages[0];
+
+
+/*
+==================================================
+  FORMAT RUPIAH
+==================================================
+*/
+
+function rupiah(number){
+
+  return new Intl.NumberFormat("id-ID",{
+    style:"currency",
+    currency:"IDR",
+    minimumFractionDigits:0
+  }).format(number);
+
+}
+
+
+/*
+==================================================
+  RENDER PAKET
+==================================================
+*/
+
+function renderPackages(){
+
+  const grid =
+    document.getElementById("packageGrid");
+
+  grid.innerHTML = "";
+
+
+  packages.forEach(pkg=>{
+
+    const card =
+      document.createElement("div");
+
+    card.className = "package";
+
+
+    if(pkg.name === selectedPackage.name){
+
+      card.classList.add("active");
+
+    }
+
+
+    card.innerHTML = `
+
+      <div class="package-duration">
+        ${pkg.duration}
+      </div>
+
+      <h3>
+        ${pkg.name}
+      </h3>
+
+      <div class="package-price">
+        ${rupiah(pkg.price)}
+      </div>
+
+      <div class="package-desc">
+        Promosi kontak selama ${pkg.duration.toLowerCase()}.
+      </div>
+
+    `;
+
+
+    card.onclick = ()=>{
+
+      selectedPackage = pkg;
+
+      updateSummary();
+
+      renderPackages();
+
+      document
+        .getElementById("order")
+        .scrollIntoView({
+          behavior:"smooth"
+        });
+
+    };
+
+
+    grid.appendChild(card);
+
+  });
+
+}
+
+
+/*
+==================================================
+  UPDATE SUMMARY
+==================================================
+*/
+
+function updateSummary(){
+
+  document.getElementById("summaryName")
+    .textContent =
+    selectedPackage.name;
+
+
+  document.getElementById("summaryDuration")
+    .textContent =
+    selectedPackage.duration;
+
+
+  document.getElementById("summaryPrice")
+    .textContent =
+    rupiah(selectedPackage.price);
+
+
+  document.getElementById("summaryTotal")
+    .textContent =
+    rupiah(selectedPackage.price);
+
+}
+
+
+/*
+==================================================
+  CREATE ORDER
+==================================================
+*/
+
+function createOrder(){
+
+  const name =
+    document.getElementById("name")
+      .value.trim();
+
+
+  const targetNumber =
+    document.getElementById("targetNumber")
+      .value.trim();
+
+
+  const contactName =
+    document.getElementById("contactName")
+      .value.trim();
+
+
+  const note =
+    document.getElementById("note")
+      .value.trim();
+
+
+  if(!name){
+
+    alert("Masukkan nama pemesan.");
+
+    return;
+
+  }
+
+
+  if(!targetNumber){
+
+    alert("Masukkan nomor WhatsApp yang ingin dipromosikan.");
+
+    return;
+
+  }
+
+
+  /*
+  ================================================
+    TAMPILKAN PREVIEW
+  ================================================
+  */
+
+  document.getElementById("previewName")
+    .textContent = name;
+
+
+  document.getElementById("previewNumber")
+    .textContent = targetNumber;
+
+
+  document.getElementById("previewPackage")
+    .textContent = selectedPackage.name;
+
+
+  document.getElementById("previewPrice")
+    .textContent =
+    rupiah(selectedPackage.price);
+
+
+  document.getElementById("previewTotal")
+    .textContent =
+    rupiah(selectedPackage.price);
+
+
+  /*
+  ================================================
+    PESAN WHATSAPP
+  ================================================
+  */
+
+  const message =
+
+`Halo Admin NEBAR.ID 👋
+
+Saya ingin order jasa nebar kontak.
+
+Nama Pemesan:
+${name}
+
+Nomor WhatsApp yang dipromosikan:
+${targetNumber}
+
+Nama Kontak:
+${contactName || "-"}
+
+Paket:
+${selectedPackage.name}
+
+Durasi:
+${selectedPackage.duration}
+
+Harga:
+${rupiah(selectedPackage.price)}
+
+Catatan:
+${note || "-"}
+
+Mohon konfirmasi order dan informasi pembayaran.
+
+Terima kasih.`;
+
+
+  /*
+  ================================================
+    NOMOR WHATSAPP ADMIN
+  ================================================
+  */
+
+  const adminNumber =
+    "62895322265411";
+
+
+  const whatsappURL =
+    "https://wa.me/" +
+    adminNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+  document.getElementById("waButton")
+    .href = whatsappURL;
+
+
+  document
+    .getElementById("modal")
+    .classList.add("show");
+
+}
+
+
+/*
+==================================================
+  CLOSE
+==================================================
+*/
+
+function closeModal(){
+
+  document
+    .getElementById("modal")
+    .classList.remove("show");
+
+}
+
+
+/*
+==================================================
+  START
+==================================================
+*/
+
+renderPackages();
+
+updateSummary();
+
+</script>
+
+</body>
+</html>
